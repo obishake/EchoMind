@@ -106,7 +106,7 @@ EchoMind/
 
 ```bash
 git clone https://github.com/obishake/EchoMind.git
-cd ThinkVerse
+cd EchoMind
 ```
 
 ### 2. Install Dependencies
