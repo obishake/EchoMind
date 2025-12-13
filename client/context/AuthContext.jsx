@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
                 return;
             }
 
-            const response = await api.get("/check");
+            const response = await api.get("/auth/check");
             if (response.data.success) {
                 setUser(response.data.user);
                 setIsAuthenticated(true);
@@ -48,7 +48,7 @@ export const AuthProvider = ({ children }) => {
 
     const signup = async (userData) => {
         try {
-            const response = await api.post("/signup", userData);
+            const response = await api.post("/auth/signup", userData);
 
             if (response.data.success) {
                 const { token, user } = response.data;
@@ -68,7 +68,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (credentials) => {
         try {
-            const response = await api.post("/login", credentials);
+            const response = await api.post("/auth/login", credentials);
 
             if (response.data.success) {
                 const { token, user } = response.data;
@@ -90,7 +90,7 @@ export const AuthProvider = ({ children }) => {
 
     const logout = async () => {
         try {
-            await api.post("/logout");
+            await api.post("/auth/logout");
             localStorage.removeItem("token");
             localStorage.removeItem("user");
             setUser(null);
@@ -110,7 +110,7 @@ export const AuthProvider = ({ children }) => {
 
     const updateProfile = async (profileData) => {
         try {
-            const response = await api.put("/update-profile", profileData);
+            const response = await api.put("/auth/update-profile", profileData);
 
             if (response.data.success) {
                 const updatedUser = response.data.user;
