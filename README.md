@@ -2,7 +2,6 @@
 
 A modern, full-stack blog platform built with the MERN stack. EchoMind allows users to create, share, and engage with blog posts in a beautiful and responsive interface.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-19.1.1-61DAFB?logo=react)](https://react.dev)
 [![Node](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js)](https://expressjs.com)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb)](https://www.mongodb.com/atlas)
