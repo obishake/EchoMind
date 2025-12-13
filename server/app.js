@@ -27,9 +27,9 @@ app.get("/", (req, res) => {
     res.send("server is running....");
 });
 
-app.use("/api/blog", blogRoute);
-app.use("/api/auth", userRouter);
-app.use("/api/comment", commentRoute);
+app.use("/blog", blogRoute);
+app.use("/auth", userRouter);
+app.use("/comment", commentRoute);
 
 await connectDB();
 
