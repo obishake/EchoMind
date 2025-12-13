@@ -9,7 +9,6 @@ import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 dotenv.config();
 
-
 const app = express();
 const server = http.createServer(app);
 
@@ -18,15 +17,12 @@ app.use(cookieParser());
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
-
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || 'http://localhost:5173',
+        origin: process.env.CLIENT_URL || "http://localhost:5173",
         credentials: true,
     })
 );
-
-const port = process.env.PORT || 5050;
 
 app.get("/", (req, res) => {
     res.send("server is running....");
@@ -38,6 +34,9 @@ app.use("/api/comment", commentRoute);
 
 await connectDB();
 
-app.listen(port, () => {
-    console.log("server is starting at port " + port);
-});
+if (process.env.NODE_ENV !== "production") {
+    const port = process.env.PORT || 5050;
+    app.listen(port, () => {
+        console.log("server is starting at port " + port);
+    });
+}

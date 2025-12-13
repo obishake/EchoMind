@@ -4,7 +4,7 @@
     "description": "StoryHub - Modern Blog Platform",
     "scripts": {
         "install-all": "npm install --prefix client && npm install --prefix server",
-        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "dev": "node app.js",
         "server": "cd server && npm start",
         "client": "cd client && npm run dev",
         "build": "cd client && npm run build"
