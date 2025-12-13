@@ -13,8 +13,8 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "server": "nodemon app.js",
-    "start": "node --watch app.js"
+    "server": "node --watch app.js",
+    "start": "node app.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
