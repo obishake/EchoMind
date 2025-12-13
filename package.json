@@ -1,0 +1,24 @@
+{
+    "name": "storyhub-root",
+    "version": "1.0.0",
+    "description": "StoryHub - Modern Blog Platform",
+    "scripts": {
+        "install-all": "npm install --prefix client && npm install --prefix server",
+        "dev": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd server && npm start",
+        "client": "cd client && npm run dev",
+        "build": "cd client && npm run build"
+    },
+    "keywords": [
+        "blog",
+        "react",
+        "nodejs",
+        "mongodb",
+        "full-stack"
+    ],
+    "author": "StoryHub Team",
+    "license": "MIT",
+    "devDependencies": {
+        "concurrently": "^8.2.2"
+    }
+}
