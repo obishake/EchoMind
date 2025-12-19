@@ -16,9 +16,20 @@ app.use(cookieParser());
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://echomind-frontend-7815.onrender.com",
+];
+
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "http://localhost:5173",
+        origin: (origin, callback) => {
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            } else {
+                callback(new Error("Not allowed by CORS"));
+            }
+        },
         credentials: true,
     })
 );
@@ -26,8 +37,6 @@ app.use(
 app.get("/", (req, res) => {
     res.send("server is running....");
 });
-
-
 
 app.use("/blog", blogRoute);
 app.use("/auth", userRouter);
