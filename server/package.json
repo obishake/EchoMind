@@ -13,9 +13,8 @@
     "type": "module",
     "main": "app.js",
     "scripts": {
-        "server": "node --watch app.js",
-        "start": "node app.js",
-        "build": "npm install"
+        "server": "node app.js",
+        "start": "node app.js"
     },
     "dependencies": {
         "bcrypt": "^6.0.0",
