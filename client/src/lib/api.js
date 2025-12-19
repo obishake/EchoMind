@@ -2,7 +2,11 @@ import axios from "axios";
 
 // Create axios instance with default config
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || "http://localhost:5050",
+    baseURL:
+        import.meta.env.VITE_API_URL ||
+        (window.location.hostname === "localhost"
+            ? "http://localhost:5050"
+            : "https://echomind-backend-0ann.onrender.com"),
     withCredentials: true, // Important for cookies
     headers: {
         "Content-Type": "application/json",
