@@ -27,13 +27,11 @@ app.get("/", (req, res) => {
     res.send("server is running....");
 });
 
-app.get("/api/health", (req, res) => {
-    res.json({ success: true, message: "API is working", timestamp: new Date() });
-});
 
-app.use("/api/blog", blogRoute);
-app.use("/api/auth", userRouter);
-app.use("/api/comment", commentRoute);
+
+app.use("/blog", blogRoute);
+app.use("/auth", userRouter);
+app.use("/comment", commentRoute);
 
 await connectDB();
 
