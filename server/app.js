@@ -42,9 +42,16 @@ app.use("/blog", blogRoute);
 app.use("/auth", userRouter);
 app.use("/comment", commentRoute);
 
-await connectDB();
-
 const port = process.env.PORT || 5050;
-app.listen(port, () => {
-    console.log("server is starting at port " + port);
-});
+
+// Connect to database and start server
+connectDB()
+    .then(() => {
+        app.listen(port, () => {
+            console.log("server is starting at port " + port);
+        });
+    })
+    .catch((error) => {
+        console.error("Failed to connect to database:", error);
+        process.exit(1);
+    });
