@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://echomind-frontend-7815.onrender.com",
+    "echo-mind-frontend-kappa.vercel.app",
 ];
 
 app.use(
