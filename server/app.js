@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/blog", blogRoute);
-app.use("/auth", userRouter);
+app.use("/", userRouter);
 app.use("/comment", commentRoute);
 
 const port = process.env.PORT || 5050;
